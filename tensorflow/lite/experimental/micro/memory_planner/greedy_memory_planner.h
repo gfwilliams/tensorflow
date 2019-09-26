@@ -12,11 +12,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-
 #ifndef TENSORFLOW_LITE_EXPERIMENTAL_MICRO_MEMORY_PLANNER_GREEDY_MEMORY_PLANNER_H_
 #define TENSORFLOW_LITE_EXPERIMENTAL_MICRO_MEMORY_PLANNER_GREEDY_MEMORY_PLANNER_H_
 
 #include "tensorflow/lite/experimental/micro/memory_planner/memory_planner.h"
+#include "tensorflow/lite/experimental/micro/compatibility.h"
 
 namespace tflite {
 
@@ -125,6 +125,8 @@ class GreedyMemoryPlanner : public MemoryPlanner {
 
   // Whether buffers have been added since the last plan was calculated.
   bool need_to_calculate_offsets_;
+
+  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 }  // namespace tflite
